@@ -1,1 +1,1 @@
-# Blog Post Archive
+# Blog Post
