@@ -108,6 +108,7 @@ select s.value.toString() from java.util.Hashtable$Entry s where /password/.test
 - 也可以点击"类"，搜索`Hashtable`，然后点击进入第一个`java.util.Hashtable$Entry`
 
 ![actuator-heapdump-堆转储文件泄露-3](assets/actuator-heapdump-堆转储文件泄露-3.jpg)
+
 ![actuator-heapdump-堆转储文件泄露-4](assets/actuator-heapdump-堆转储文件泄露-4.jpg)
 
 - 通过对左侧实例进行观察，这里发现了JDBC明文密码以及路径

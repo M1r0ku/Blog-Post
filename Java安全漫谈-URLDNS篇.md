@@ -1,8 +1,8 @@
 ---
 title: Java安全漫谈-URLDNS篇
 date: 2023-02-25 00:00:00
-categories: Pentest
-tags: [Java]
+categories: Java
+tags: [反序列化,Ysoserial]
 ---
 
 ## 环境准备

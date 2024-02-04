@@ -1,11 +1,14 @@
 ---
 title: Java安全漫谈-CC1篇
 date: 2023-03-03 18:00:00
-categories: Pentest
-tags: [Java]
+categories: Java
+tags: [反序列化,Ysoserial]
 ---
 
+# Java安全漫谈-CC1篇
+
 ## 环境准备
+
 - 这条链在 Java 8u71 以后就不能利用了，这里使用的环境是 Java8u66
 
 ![Java安全漫谈-CC1篇-0](assets/Java安全漫谈-CC1篇-0.png)

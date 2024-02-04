@@ -1,13 +1,13 @@
 ---
 title: Java安全漫谈-反射篇
 date: 2023-02-16 10:30:00
-categories: Pentest
-tags: [Java]
+categories: Java
+tags: [反序列化,Ysoserial]
 ---
 
 > Java安全可以从反序列化漏洞开始说起，反序列化漏洞⼜可以从反射开始说起。
 
-# 反射机制
+# Java安全漫谈-反射篇
 > 可以获取到任何类的构造方法`Constructors`、成员方法`Methods`、成员变量`Fields`等信息
 
 - 核心方法：基本上这⼏个⽅法包揽了Java安全⾥各种和反射有关的Payload。

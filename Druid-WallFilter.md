@@ -7,7 +7,7 @@ tags: [SQL, Bypass]
 ## 简介
 > 之前挖洞的时候遇到了一个 SQL 注入，测试时可以看到回显的 SQL 语句，但是一直被拦截，搜索了下发现是 WallFilter
 
-WallFilter是阿里巴巴的[数据库连接池Druid](https://github.com/alibaba/druid)中一个特殊的 Filter，主要功能是用于监控SQL安全，并基于SQL语法进行分析，理解其中的 SQL 语义，然后作出智能准确的处理，从而避免 SQL 注入。
+WallFilter 是阿里巴巴的[数据库连接池Druid](https://github.com/alibaba/druid)中一个特殊的 Filter，主要功能是用于监控 SQL 安全，并基于 SQL 语法进行分析，理解其中的 SQL 语义，然后作出智能准确的处理，从而避免 SQL 注入。
 
 ## 拦截1
 首次尝试注入，Payload 如下：
@@ -43,7 +43,8 @@ and(updatexml(1,concat(0x7e,(select user())),0))
 原因是默认配置下，WallFilter 拦截了如下函数和关键字：
 
 - [Druid拦截功能的配置与简单绕过](https://mp.weixin.qq.com/s/lGalf63VXCva2I5BpmSMgQ)
-- [alibaba/druid/wall](https://github.com/alibaba/druid/tree/master/src/main/resources/META-INF/druid/wall)
+- ~~[alibaba/druid/wall](https://github.com/alibaba/druid/tree/master/src/main/resources/META-INF/druid/wall)~~
+- [alibaba/druid/wall](https://github.com/alibaba/druid/blob/master/core/src/main/resources/META-INF/druid/wall/mysql/deny-function.txt)
 
 ```basic
 deny-function:
@@ -132,6 +133,8 @@ mysql.innodb_index_stats
 
 
 ```
-测试之后发现报错：`SELECT command denied ...`，原因是**当前用户权限不足**所导致。如果数据库当前用户为`root`或者其它具有对应权限的用户时，利用这个办法进行绕过是可行的
+测试之后发现报错：`SELECT command denied ...`，原因是**当前用户权限不足**所导致。
+
+如果数据库当前用户为`root`或者其它具有对应权限的用户时，利用这个办法进行绕过是可行的
 
 ![Druid-WallFilter-5](assets/Druid-WallFilter-5.png)
