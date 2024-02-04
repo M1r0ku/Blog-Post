@@ -1,3 +1,11 @@
+---
+title: FRP魔改
+date: 2022-08-30 00:00:00
+categories: Pentest
+tags: [Go, 免杀, FRP]
+
+---
+
 # FRP魔改
 
 Todo：
